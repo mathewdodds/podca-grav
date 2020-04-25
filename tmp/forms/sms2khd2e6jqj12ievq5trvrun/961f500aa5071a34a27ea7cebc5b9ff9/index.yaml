@@ -1,0 +1,54 @@
+form: flex-pages-raw
+unique_id: 961f500aa5071a34a27ea7cebc5b9ff9
+url: 'http://localhost/podca/admin/pages/home'
+user:
+  username: master
+  email: grav@grav.grav
+timestamps:
+  created: 1586475472
+  updated: 1586475472
+data:
+  frontmatter: "title: Home\r\nbody_classes: 'title-center title-h1h2'\r\nbackground_hero: hero_bg_1.jpg\r\nfeature_podcast: 's1'\r\n"
+  content: null
+  ordering: true
+  folder: home
+  route: ''
+  name: default
+  order: null
+  blueprint: null
+  header:
+    background_hero: hero_bg_1.jpg
+    media_order: null
+  xss_check: null
+files: {  }
+object:
+  type: pages
+  key: home
+  storage_key: 01.home
+  timestamp: 1586473502
+  serialized:
+    __META:
+      key: home
+      storage_key: 01.home
+      template: default
+      storage_timestamp: 1586473502
+      markdown:
+        '': { default: 1586207065 }
+      children:
+        01._guests: false
+        02.search: false
+      checksum: 39f182e4e6a701b09674fe76528a2985
+    storage_key: 01.home
+    parent_key: ''
+    order: '01.'
+    folder: home
+    template: default
+    lang: ''
+    header:
+      title: Home
+      body_classes: 'title-center title-h1h2'
+      background_hero: hero_bg_1.jpg
+    root: false
+    markdown: ''
+    slug: home
+    name: default.md

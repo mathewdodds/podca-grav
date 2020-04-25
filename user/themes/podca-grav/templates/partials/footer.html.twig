@@ -1,0 +1,94 @@
+{% set taxlistFoot = taxonomylist.get()  %}
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <h3 class="footer-heading mb-4">Popular Tags</h3>
+
+                    </div>
+                    <div id="footerTax" class="col-md-6 col-lg-6">
+
+
+
+                        {% for tax,value in taxlistFoot %}
+                            {% for v in value|keys|slice(0, 12) %}
+                                <a class="tax-block-link" href="{{ page.find('/utility/tagfind').url ~ "?" ~ v }}" v-on:click=" getTax('{{ v }}')">{{ v }}</a>
+                                 &nbsp;
+                            {% endfor %}
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="footer-heading mb-4">Follow Us</h3>
+                        {% set fbk = theme_var('social_fb') %}
+                        {% set twi = theme_var('social_tw') %}
+                        {% set ins = theme_var('social_in') %}
+
+
+
+                        <div>
+                            {% if fbk %}<a href="{{ fbk }}" class="pl-0 pr-3"><span class="icon-facebook"></span></a>{% endif %}
+                            {% if twi %}<a href="{{ twi }}" class="pl-3 pr-3"><span class="icon-twitter"></span></a>{% endif %}
+                            {% if ins %}<a href="{{ ins }}" class="pl-3 pr-3"><span class="icon-instagram"></span></a>{% endif %}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="mb-5">
+                    <h3 class="footer-heading mb-2">{{ page.find('/utility/_footer-snippet').title }}</h3>
+                    {{ page.find('/utility/_footer-snippet').content }}
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+            <div class="col-md-12">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template was made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+                    and ported to Grav by <a href="http://mathewdodds.me">Mathew Dodds</a>.
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+
+        var footer =  new Vue({
+            el: '#footerTax',
+
+            data () {
+                return {
+
+                }
+            },
+            delimiters: ['<%','%>'],
+
+            methods: {
+
+                getTax: function (tag){
+
+                }
+
+            }
+
+        })
+
+    </script>
+</footer>

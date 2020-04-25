@@ -1,0 +1,206 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+
+
+{% endblock head %}
+
+
+{% block stylesheets %}
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    {% do assets.addCss('theme://fonts/icomoon/style.css') %}
+    {% do assets.addCss('theme://css/bootstrap.min.css') %}
+    {% do assets.addCss('theme://css/magnific-popup.css') %}
+    {% do assets.addCss('theme://css/jquery-ui.css') %}
+    {% do assets.addCss('theme://css/owl.carousel.min.css') %}
+    {% do assets.addCss('theme://css/owl.theme.default.min.css') %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    {% set clr_p_bg = theme_var('primary_bg') %}
+    {% set clr_p_txt = theme_var('primary_txt') %}
+    {% set clr_s_bg = theme_var('secondary_bg') %}
+    {% set clr_title = theme_var('title_colour') %}
+
+    <style>
+        .primary-ele{
+            color:{{ clr_p_txt }};
+            background-color:{{ clr_p_bg }};
+        }
+        .primary-ele:hover{
+            color:{{ clr_p_txt }};
+            background-color:{{ clr_p_bg }};
+            opacity:0.95;
+        }
+        .team-member::before{
+            background: {{ clr_s_bg }};
+        }
+        .title-clr{
+            color: {{ clr_title }};
+        }
+        .title-clr:hover{
+            color:{{ clr_title }};
+            opacity:0.64;
+        }
+
+
+    </style>
+
+    {% do assets.addCss('theme://css/style.css') %}
+
+{% endblock %}
+
+    {% block assets deferred %}
+    {{ assets.css()|raw }}
+
+    {% endblock %}
+
+</head>
+
+
+<body>
+
+
+<div class="site-wrap">
+
+
+{% block header %}
+
+    <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <header class="site-navbar py-4 absolute transparent" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+
+                <div class="col-3" data-aos="fade-down">
+                    <h1><a href="{{ page.find('/home').url }}" class="text-white h2"><i class="fa fa-podcast"></i> Podcast</a></h1>
+                </div>
+                <div class="col-9" data-aos="fade-down">
+                    <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
+
+
+
+                        <div class="d-inline-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+                        <ul class="site-menu js-clone-nav d-none">
+                            {% for child in page.find('/home').children.visible %}
+                            <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+                            {% endfor %}
+
+                            <li class="has-children">
+                                <a class="dropme" href="#">Series</a>
+                                <ul class="dropdown arrow-top">
+                                    {% for series in page.find('/podcast').children %}
+                                        <li><a href="{{ series.url }}">{{ series.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            {% for child in page.find('/info').children.visible %}
+                                <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        </header>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+        {% block content %}{% endblock %}
+
+
+{% endblock %}
+
+
+{% block footer %}
+
+    {% include 'partials/footer.html.twig' %}
+
+
+{% endblock %}
+
+</div>
+
+
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/jquery-3.3.1.min.js') %}
+    {% do assets.addJs('theme://js/jquery-migrate-3.0.1.min.js') %}
+    {% do assets.addJs('theme://js/jquery-ui.js') %}
+    {% do assets.addJs('theme://js/popper.min.js') %}
+    {% do assets.addJs('theme://js/bootstrap.min.js') %}
+    {% do assets.addJs('theme://js/owl.carousel.min.js') %}
+    {% do assets.addJs('theme://js/jquery.stellar.min.js') %}
+    {% do assets.addJs('theme://js/jquery.countdown.min.js') %}
+    {% do assets.addJs('theme://js/jquery.magnific-popup.min.js') %}
+    {% do assets.addJs('theme://js/aos.js') %}
+    {% do assets.addJs('theme://js/slick.min.js') %}
+
+
+    {% do assets.addJs('theme://js/mediaelement-and-player.min.js') %}
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+
+            for (var i = 0; i < total; i++) {
+                new MediaElementPlayer(mediaElements[i], {
+                    pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
+                    shimScriptAccess: 'always',
+                    success: function () {
+                        var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                        for (var j = 0; j < targetTotal; j++) {
+                            target[j].style.visibility = 'visible';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+    {% do assets.addJs('theme://js/main.js') %}
+
+    {{ assets.js()|raw }}
+
+{% endblock %}
+
+
+</body>
+</html>

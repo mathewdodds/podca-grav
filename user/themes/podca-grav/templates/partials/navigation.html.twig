@@ -1,0 +1,49 @@
+
+
+
+<div class="d-inline-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+<ul class="site-menu js-clone-nav d-none">
+
+    {% for p in page.children.visible %}
+        {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
+        {% if p.children.visible.count > 0 %}
+            <li class="has-children {{ current_page }}">
+                <a href="{{ p.url }}">
+                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+                    {{ p.menu }}
+                </a>
+                <ul class="dropdown arrow-top">
+                    {{ _self.loop(p) }}
+                </ul>
+            </li>
+        {% endif %}
+    {% endfor %}
+
+
+    {% for mitem in site.menu %}
+        <li>
+            <a href="{{ mitem.url }}">
+                {{ mitem.text }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+
+
+{#    <li class="active"><a href="index.html">Home</a></li>#}
+{#    <li><a href="index.html">Search</a></li>#}
+{#    <li class="has-children">#}
+{#        <a href="#">Series</a>#}
+{#        <ul class="dropdown arrow-top">#}
+{#            <li><a href="#">Menu One</a></li>#}
+{#            <li><a href="#">Menu Two</a></li>#}
+{#            <li><a href="#">Menu Three</a></li>#}
+{#        </ul>#}
+{#    </li>#}
+{#    <li><a href="#">RSS Feed</a></li>#}
+{#    <li><a href="about.html">About</a></li>#}
+{#    <li><a href="contact.html">Contact</a></li>#}
+{#</ul>#}

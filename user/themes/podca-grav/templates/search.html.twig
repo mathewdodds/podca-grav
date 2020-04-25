@@ -1,0 +1,140 @@
+{% extends 'partials/base.html.twig' %}
+
+
+{% block content %}
+    {% set podcasts = page.find('/podcast') %}
+    {% set taxlist = taxonomylist.get()  %}
+
+
+
+    <div class="site-block-top bg-dark">
+    </div>
+    <div class="site-block-def">
+
+
+
+                    <div id="search" class="container">
+
+                        <div class="row">
+                            <div class="col-5">
+                                <p>Search</p>
+                                <input type="text" name="search" v-model="live"><br><br>
+                            </div>
+                            <div class="col-7">
+                                <p>Tags</p>
+
+
+                                {% set ct = 0 %}
+                                {% set count = 0 %}
+                                {% for tax,value in taxlist %}
+                                    {% for v in value|keys %}
+                                        {% set count = count + 1 %}
+                                    {% endfor %}
+                                {% endfor %}
+                                {% set ct = count %}
+                                {% for tax,value in taxlist %}
+                                    {% for v in value|keys %}
+                                        <input type="checkbox" v-on:click=" generateList('{{ v }}',{{ ct }}) ">
+                                        <label>{{ v }}</label> &nbsp;
+                                    {% endfor %}
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+
+                        {#        {% set pass_list = [] %}#}
+
+                        {#        {% for ta,val in e_list %}#}
+                        {#            {% for va in val|keys %}#}
+
+                        {#                {% set pass_list = pass_list|merge(val) %}#}
+
+                        {#            {% endfor %}#}
+                        {#        {% endfor %}#}
+
+
+
+
+
+                        {% set collection = null %}
+                        {% for series in podcasts.children %}
+                            {% if collection is null %}
+                                {% set collection = series.children %}
+                            {% else %}
+                                {% set collection = collection.merge(series.children) %}
+                            {% endif %}
+                        {% endfor %}
+
+
+                        {% for episode in collection.order('date','desc') %}
+
+                            {% set passArray = ["1029348"] %}
+
+                            {% for t in episode.header.taxonomy %}
+                                {% for v in t  %}
+
+                                    {% set passArray = passArray|merge([v]) %}
+
+
+                                {%endfor %}
+
+                            {% endfor %}
+
+                            {{ dump(passArray|string) }}
+
+                            <script>
+                                var passTax{{ episode.title|hyphenize }};
+                                passTax{{ episode.title|hyphenize }} = {{ passArray|string }};
+                            </script>
+
+                            <div v-show= "match('{{ episode.title }}{{ episode.header.description }}',passTax{{ episode.title|hyphenize }})">
+                                <h3 class="font-weight-light"><a class="title-clr" href="{{ episode.url }}">{{ episode.title }}</a></h3>
+                                <div class="text-white"><span class="text-black-opacity-05">
+                        <small>
+                            Posted in {{ episode.parent.title }} on {{ episode.header.date|date(system.pages.dateformat.short) }}
+                        </small>
+                    </span>
+                                </div>
+                                <div class="tax-list">
+
+                                    {% for t in episode.header.taxonomy %}
+                                        {% for v in t  %}
+
+
+                                            <div class="tax-block">{{ v }}</div>
+
+
+                                        {% endfor %}
+                                    {% endfor %}
+
+                                </div>
+
+                                <p class="mb-4">{{ episode.header.description }}</p>
+                                <hr>
+                            </div>
+
+                        {% endfor %}
+
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+    {% do assets.addJs('theme://js/search.js') %}
+
+
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,30 @@
+{% block artist %}
+
+    <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+        <div class="team-member">
+
+            <img src="{{ page.media.images|first.url }}" alt="Image" class="img-fluid">
+
+            <div class="text">
+
+                <h2 class="mb-2 font-weight-light h4">{{ page.title }}</h2>
+                <span class="d-block mb-2 text-white-opacity-05">{{ page.header.role }}</span>
+                <p class="mb-4">{{ page.content }}</p>
+                <p>
+                    {% if page.header.facebook != "" %}<a href="{{ page.header.facebook }}" class="text-white
+                    p-2"><span class="icon-facebook"></span></a>
+                    {% endif %}
+                    {% if page.header.twitter != "" %}<a href="{{ page.header.twitter }}" class="text-white p-2"><span class="icon-twitter"></span></a>
+                    {% endif %}
+                    {% if page.header.linkedin != "" %}<a href="{{ page.header.linkedin }}" class="text-white
+                    p-2"><span class="icon-linkedin"></span></a>
+                    {% endif %}
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends 'partials/base.html.twig' %}
+
+
+{% block content %}
+    {% set podcasts = page.find('/podcast') %}
+    {% set taxlist = taxonomylist.get()  %}
+
+
+
+    <div class="site-block-top bg-dark">
+    </div>
+
+    <div class="site-block-def">
+
+
+
+                    <div id="taxResults" class="container">
+
+                        <div class="row">
+                            <div class="col-7">
+                                <small class="text-info">TAG SEARCH RESULTS</small>
+                                <h4 class="no-margin-top"><% tagTitle %></h4>
+                                <br>
+
+                            </div>
+                        </div>
+
+                        {% set collection = null %}
+                        {% for series in podcasts.children %}
+                            {% if collection is null %}
+                                {% set collection = series.children %}
+                            {% else %}
+                                {% set collection = collection.merge(series.children) %}
+                            {% endif %}
+                        {% endfor %}
+
+
+                        {% for episode in collection.order('date','desc') %}
+
+
+                            {% if episode.media['img_small.jpg'].exists() == false %}
+                                {% set epi_pic = episode.parent.media['img_small.jpg'].url %}
+                            {% else %}
+                                {% set epi_pic = episode.media['img_small.jpg'].url %}
+                            {% endif %}
+
+                            {% set passArray = ["1029348"] %}
+                            {% for t in episode.header.taxonomy %}
+                                {% for v in t  %}
+                                    {% set passArray = passArray|merge([v]) %}
+                                {%endfor %}
+                            {% endfor %}
+
+                            <script>
+                                var passTax{{ episode.title|hyphenize }};
+                                passTax{{ episode.title|hyphenize }} = {{ passArray|string }};
+                            </script>
+
+                            <div v-if= "taxmatch(passTax{{ episode.title|hyphenize }})">
+
+
+                                <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+                                    <div class="image" style="background-image: url({{ epi_pic }});"></div>
+                                    <div class="text">
+
+                                        <h3 class="font-weight-light"><a href="{{ episode.url }}">{{ episode.title }}</a></h3>
+                                        <div class="text-white mb-3"><span class="text-black-opacity-05"><small>Posted in {{ episode.parent.title }} on {{ episode.date|date(system.pages.dateformat.short) }}  </small></span></div>
+
+                                        <div class="tax-list">
+
+                                            {% for t in episode.header.taxonomy %}
+                                                {% for v in t  %}
+
+
+                                                    <div class="tax-block">{{ v }}</div>
+
+
+                                                {% endfor %}
+                                            {% endfor %}
+
+                                        </div>
+
+                                        <p class="mb-4">{{ episode.header.description }}</p>
+
+                                        <div class="player">
+                                            <audio id="player2" preload="none" controls style="max-width: 100%">
+                                                <source src="{{ episode.header.mp3link }}" type="audio/mp3">
+                                            </audio>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        {% endfor %}
+
+
+
+
+
+
+                    </div>
+
+
+
+    </div>
+
+
+    <script>
+
+
+        var url = window.location.href;
+        var params = url.split('?');
+
+
+        const capitalize = (s) => {
+            if (typeof s !== 'string') return ''
+            return s.charAt(0).toUpperCase() + s.slice(1)
+        }
+
+
+
+
+
+        var app2 =  new Vue({
+            el: '#taxResults',
+
+            data () {
+                return {
+                    tagTitle:'',
+                }
+            },
+
+            delimiters: ['<%','%>'],
+
+            methods: {
+
+
+                taxmatch: function (taxable) {
+
+                    // console.log(taxable)
+
+                    console.log("taxable: " + taxable + " params: " + params[1])
+                    const found = taxable.includes(params[1]);
+                    this.tagTitle = capitalize(params[1]);
+                    console.log(this.tagTitle[1]);
+
+                    if (found == true) {
+                        return true;
+
+
+                    }
+
+
+
+                }
+            }
+
+        })
+
+
+    </script>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

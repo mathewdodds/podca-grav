@@ -1,0 +1,26 @@
+{% block modules %}
+
+<div class="site-section">
+    <div class="container" data-aos="fade-up">
+        <div class="row mb-5">
+            <div class="col-md-12 text-center">
+                <h2 class="font-weight-bold text-black">Behind The Mic</h2>
+            </div>
+        </div>
+        <div class="row">
+
+
+            {% block artist %}
+                {%  for a in page.children %}
+                    {{ a.content }}
+                {% endfor %}
+            {% endblock %}
+
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
