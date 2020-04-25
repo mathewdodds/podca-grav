@@ -2,9 +2,9 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'F:/laragon/www/podca/user/data/feed/eb0a191797624dd3a48fa681d3061212.yaml',
-    'modified' => 1587699380,
+    'modified' => 1587836909,
     'data' => [
-        'last_checked' => 1587699380,
+        'last_checked' => 1587836909,
         'data' => [
             0 => [
                 'title' => 'Grav 1.7 RC.1 Released',
