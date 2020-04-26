@@ -73,8 +73,47 @@ class __TwigTemplate_9f2acfef8232a2eeb2f7f68cd584230c0566995f18d9677e81ef04b968b
         echo " <span class=\"sep\">/</span>  ";
         echo twig_date_format_filter($this->env, $this->getAttribute(($context["page"] ?? null), "date", []), $this->getAttribute($this->getAttribute($this->getAttribute(($context["system"] ?? null), "pages", []), "dateformat", []), "short", []));
         echo "</small></span></div>
+
+                    <div class=\"tax-list align-items-center justify-content-center text-center\">
+
+                        ";
+        // line 20
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", []), "taxonomy", []));
+        foreach ($context['_seq'] as $context["_key"] => $context["t"]) {
+            // line 21
+            echo "                            ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["t"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["v"]) {
+                // line 22
+                echo "
+
+                                <a  href=\"";
+                // line 24
+                echo (($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/utility/tagfind"], "method"), "url", []) . "?") . $context["v"]);
+                echo "\" class=\"tax-block\">";
+                echo $context["v"];
+                echo "</a>
+
+
+                            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['v'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 28
+            echo "                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 29
+        echo "
+                    </div>
+
                     <p class=\"mb-4\">";
-        // line 17
+        // line 32
         echo $this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", []), "description", []);
         echo "</p>
                 </div>
@@ -90,7 +129,7 @@ class __TwigTemplate_9f2acfef8232a2eeb2f7f68cd584230c0566995f18d9677e81ef04b968b
                 <div class=\"player\">
                     <audio id=\"player2\" preload=\"none\" controls style=\"max-width: 100%\">
                         <source src=\"";
-        // line 30
+        // line 45
         echo $this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", []), "mp3link", []);
         echo "\" type=\"audio/mp3\">
                     </audio>
@@ -102,7 +141,7 @@ class __TwigTemplate_9f2acfef8232a2eeb2f7f68cd584230c0566995f18d9677e81ef04b968b
             <div class=\"row\">
                 <div class=\"col-md-12\">
                     ";
-        // line 39
+        // line 54
         echo $this->getAttribute(($context["page"] ?? null), "content", []);
         echo "
                 </div>
@@ -135,7 +174,7 @@ class __TwigTemplate_9f2acfef8232a2eeb2f7f68cd584230c0566995f18d9677e81ef04b968b
 
     public function getDebugInfo()
     {
-        return array (  106 => 39,  94 => 30,  78 => 17,  72 => 16,  68 => 15,  60 => 10,  56 => 8,  50 => 7,  42 => 1,  40 => 4,  38 => 3,  29 => 1,);
+        return array (  145 => 54,  133 => 45,  117 => 32,  112 => 29,  106 => 28,  94 => 24,  90 => 22,  85 => 21,  81 => 20,  72 => 16,  68 => 15,  60 => 10,  56 => 8,  50 => 7,  42 => 1,  40 => 4,  38 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -164,6 +203,21 @@ class __TwigTemplate_9f2acfef8232a2eeb2f7f68cd584230c0566995f18d9677e81ef04b968b
                 <div class=\"col-md-8\" data-aos=\"fade-up\" data-aos-delay=\"400\">
                     <h2 class=\"text-white font-weight-light mb-2 display-4\">{{page.title}}</h2>
                     <div class=\"text-white mb-3\"><span class=\"text-white-opacity-05\"><small>By {{ page.header.author }} <span class=\"sep\">/</span>  {{ page.date|date(system.pages.dateformat.short) }}</small></span></div>
+
+                    <div class=\"tax-list align-items-center justify-content-center text-center\">
+
+                        {% for t in page.header.taxonomy %}
+                            {% for v in t  %}
+
+
+                                <a  href=\"{{ page.find('/utility/tagfind').url ~ \"?\" ~ v }}\" class=\"tax-block\">{{ v }}</a>
+
+
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+
                     <p class=\"mb-4\">{{ page.header.description }}</p>
                 </div>
             </div>

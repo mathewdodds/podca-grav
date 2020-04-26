@@ -187,8 +187,8 @@ class __TwigTemplate_f44d99190337c8230d6818987bdb2f1069f6fe696d89130f8700a5d1d69
             echo ($context["epi_pic"] ?? null);
             echo ");\"></div>
                                     <div class=\"text\">
-
-                                        <h3 class=\"font-weight-light\"><a href=\"";
+ 
+                                        <h3 class=\"font-weight-light\"><a class=\"title-clr\" href=\"";
             // line 66
             echo $this->getAttribute($context["episode"], "url", []);
             echo "\">";
@@ -216,10 +216,12 @@ class __TwigTemplate_f44d99190337c8230d6818987bdb2f1069f6fe696d89130f8700a5d1d69
                     // line 73
                     echo "
 
-                                                    <div class=\"tax-block\">";
+                                                    <a  href=\"";
                     // line 75
+                    echo (($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/utility/tagfind"], "method"), "url", []) . "?") . $context["v"]);
+                    echo "\" class=\"tax-block\">";
                     echo $context["v"];
-                    echo "</div>
+                    echo "</a>
 
 
                                                 ";
@@ -352,7 +354,7 @@ class __TwigTemplate_f44d99190337c8230d6818987bdb2f1069f6fe696d89130f8700a5d1d69
 
     public function getDebugInfo()
     {
-        return array (  264 => 96,  249 => 87,  242 => 83,  237 => 80,  231 => 79,  221 => 75,  217 => 73,  212 => 72,  208 => 71,  199 => 67,  193 => 66,  187 => 63,  180 => 59,  172 => 56,  168 => 55,  164 => 53,  158 => 52,  152 => 51,  149 => 50,  144 => 49,  139 => 48,  137 => 47,  134 => 46,  131 => 45,  128 => 44,  125 => 43,  122 => 42,  120 => 41,  116 => 39,  112 => 38,  108 => 36,  102 => 35,  99 => 34,  96 => 33,  93 => 32,  90 => 31,  87 => 30,  82 => 29,  80 => 28,  57 => 7,  54 => 6,  51 => 5,  45 => 4,  29 => 1,);
+        return array (  266 => 96,  251 => 87,  244 => 83,  239 => 80,  233 => 79,  221 => 75,  217 => 73,  212 => 72,  208 => 71,  199 => 67,  193 => 66,  187 => 63,  180 => 59,  172 => 56,  168 => 55,  164 => 53,  158 => 52,  152 => 51,  149 => 50,  144 => 49,  139 => 48,  137 => 47,  134 => 46,  131 => 45,  128 => 44,  125 => 43,  122 => 42,  120 => 41,  116 => 39,  112 => 38,  108 => 36,  102 => 35,  99 => 34,  96 => 33,  93 => 32,  90 => 31,  87 => 30,  82 => 29,  80 => 28,  57 => 7,  54 => 6,  51 => 5,  45 => 4,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -429,8 +431,8 @@ class __TwigTemplate_f44d99190337c8230d6818987bdb2f1069f6fe696d89130f8700a5d1d69
                                 <div class=\"d-block d-md-flex podcast-entry bg-white mb-5\" data-aos=\"fade-up\">
                                     <div class=\"image\" style=\"background-image: url({{ epi_pic }});\"></div>
                                     <div class=\"text\">
-
-                                        <h3 class=\"font-weight-light\"><a href=\"{{ episode.url }}\">{{ episode.title }}</a></h3>
+ 
+                                        <h3 class=\"font-weight-light\"><a class=\"title-clr\" href=\"{{ episode.url }}\">{{ episode.title }}</a></h3>
                                         <div class=\"text-white mb-3\"><span class=\"text-black-opacity-05\"><small>Posted in {{ episode.parent.title }} on {{ episode.date|date(system.pages.dateformat.short) }}  </small></span></div>
 
                                         <div class=\"tax-list\">
@@ -439,7 +441,7 @@ class __TwigTemplate_f44d99190337c8230d6818987bdb2f1069f6fe696d89130f8700a5d1d69
                                                 {% for v in t  %}
 
 
-                                                    <div class=\"tax-block\">{{ v }}</div>
+                                                    <a  href=\"{{ page.find('/utility/tagfind').url ~ \"?\" ~ v }}\" class=\"tax-block\">{{ v }}</a>
 
 
                                                 {% endfor %}

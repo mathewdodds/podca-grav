@@ -14,6 +14,21 @@
                 <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                     <h2 class="text-white font-weight-light mb-2 display-4">{{page.title}}</h2>
                     <div class="text-white mb-3"><span class="text-white-opacity-05"><small>By {{ page.header.author }} <span class="sep">/</span>  {{ page.date|date(system.pages.dateformat.short) }}</small></span></div>
+
+                    <div class="tax-list align-items-center justify-content-center text-center">
+
+                        {% for t in page.header.taxonomy %}
+                            {% for v in t  %}
+
+
+                                <a  href="{{ page.find('/utility/tagfind').url ~ "?" ~ v }}" class="tax-block">{{ v }}</a>
+
+
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+
                     <p class="mb-4">{{ page.header.description }}</p>
                 </div>
             </div>

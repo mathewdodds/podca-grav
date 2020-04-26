@@ -46,6 +46,21 @@
 
             <h3 class="font-weight-light"><a class="title-clr" href="{{ episode.url }}">{{ episode.title }}</a></h3>
             <div class="text-white mb-3"><span class="text-black-opacity-05"><small>Posted in {{ episode.parent.title }} on {{ episode.date|date(system.pages.dateformat.short) }}  </small></span></div>
+
+                                                    <div class="tax-list">
+
+                                            {% for t in episode.header.taxonomy %}
+                                                {% for v in t  %}
+
+
+                                                    <a  href="{{ page.find('/utility/tagfind').url ~ "?" ~ v }}" class="tax-block">{{ v }}</a>
+
+
+                                                {% endfor %}
+                                            {% endfor %}
+
+                                        </div>
+
             <p class="mb-4">{{ episode.header.description }}</p>
 
             <div class="player">

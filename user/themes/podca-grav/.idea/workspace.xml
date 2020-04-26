@@ -12,6 +12,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -79,7 +80,8 @@
       <workItem from="1587073889520" duration="17248000" />
       <workItem from="1587433579017" duration="9040000" />
       <workItem from="1587699238922" duration="9049000" />
-      <workItem from="1587760551476" duration="12760000" />
+      <workItem from="1587760551476" duration="14012000" />
+      <workItem from="1587932301840" duration="804000" />
     </task>
     <servers />
   </component>
@@ -91,7 +93,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

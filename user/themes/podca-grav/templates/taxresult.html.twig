@@ -72,7 +72,7 @@
                                                 {% for v in t  %}
 
 
-                                                    <div class="tax-block">{{ v }}</div>
+                                                    <a  href="{{ page.find('/utility/tagfind').url ~ "?" ~ v }}" class="tax-block">{{ v }}</a>
 
 
                                                 {% endfor %}

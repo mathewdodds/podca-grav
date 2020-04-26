@@ -57,7 +57,7 @@ class __TwigTemplate_415773e762f3007b54faa3d079f02eb1745ce714a2193ba66a4a6feee71
         echo "
 
 
-    <div class=\"site-block-top bg-secondary\">
+    <div class=\"site-block-top bg-dark\">
     </div>
     <div class=\"site-block-def\">
 
@@ -298,10 +298,12 @@ class __TwigTemplate_415773e762f3007b54faa3d079f02eb1745ce714a2193ba66a4a6feee71
                     // line 103
                     echo "
 
-                                            <div class=\"tax-block\">";
+                                            <a  href=\"";
                     // line 105
+                    echo (($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/utility/tagfind"], "method"), "url", []) . "?") . $context["v"]);
+                    echo "\" class=\"tax-block\">";
                     echo $context["v"];
-                    echo "</div>
+                    echo "</a>
 
 
                                         ";
@@ -370,7 +372,7 @@ class __TwigTemplate_415773e762f3007b54faa3d079f02eb1745ce714a2193ba66a4a6feee71
 
     public function getDebugInfo()
     {
-        return array (  352 => 132,  350 => 131,  335 => 118,  324 => 113,  319 => 110,  313 => 109,  303 => 105,  299 => 103,  294 => 102,  290 => 101,  279 => 95,  271 => 92,  264 => 91,  256 => 88,  252 => 87,  246 => 84,  243 => 83,  236 => 81,  228 => 78,  226 => 77,  223 => 76,  218 => 75,  214 => 74,  211 => 73,  209 => 72,  206 => 71,  202 => 70,  198 => 68,  192 => 67,  189 => 66,  186 => 65,  183 => 64,  180 => 63,  177 => 62,  172 => 61,  170 => 60,  163 => 55,  161 => 54,  158 => 52,  155 => 50,  153 => 49,  150 => 47,  143 => 41,  137 => 40,  129 => 38,  122 => 37,  117 => 36,  112 => 35,  109 => 34,  103 => 33,  97 => 32,  94 => 31,  89 => 30,  84 => 29,  81 => 28,  79 => 27,  57 => 7,  54 => 6,  51 => 5,  45 => 4,  29 => 1,);
+        return array (  354 => 132,  352 => 131,  337 => 118,  326 => 113,  321 => 110,  315 => 109,  303 => 105,  299 => 103,  294 => 102,  290 => 101,  279 => 95,  271 => 92,  264 => 91,  256 => 88,  252 => 87,  246 => 84,  243 => 83,  236 => 81,  228 => 78,  226 => 77,  223 => 76,  218 => 75,  214 => 74,  211 => 73,  209 => 72,  206 => 71,  202 => 70,  198 => 68,  192 => 67,  189 => 66,  186 => 65,  183 => 64,  180 => 63,  177 => 62,  172 => 61,  170 => 60,  163 => 55,  161 => 54,  158 => 52,  155 => 50,  153 => 49,  150 => 47,  143 => 41,  137 => 40,  129 => 38,  122 => 37,  117 => 36,  112 => 35,  109 => 34,  103 => 33,  97 => 32,  94 => 31,  89 => 30,  84 => 29,  81 => 28,  79 => 27,  57 => 7,  54 => 6,  51 => 5,  45 => 4,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -392,7 +394,7 @@ class __TwigTemplate_415773e762f3007b54faa3d079f02eb1745ce714a2193ba66a4a6feee71
 
 
 
-    <div class=\"site-block-top bg-secondary\">
+    <div class=\"site-block-top bg-dark\">
     </div>
     <div class=\"site-block-def\">
 
@@ -487,7 +489,7 @@ class __TwigTemplate_415773e762f3007b54faa3d079f02eb1745ce714a2193ba66a4a6feee71
                                         {% for v in t  %}
 
 
-                                            <div class=\"tax-block\">{{ v }}</div>
+                                            <a  href=\"{{ page.find('/utility/tagfind').url ~ \"?\" ~ v }}\" class=\"tax-block\">{{ v }}</a>
 
 
                                         {% endfor %}

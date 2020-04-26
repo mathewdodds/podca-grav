@@ -121,7 +121,7 @@ class __TwigTemplate_fbef146dd8c8996f635f376b10b4b3893e830287304f700bc8544689328
         );\"></div>
         <div class=\"text\">
 
-            <h3 class=\"font-weight-light\"><a href=\"";
+            <h3 class=\"font-weight-light\"><a class=\"title-clr\" href=\"";
             // line 47
             echo $this->getAttribute($context["episode"], "url", []);
             echo "\">";
@@ -133,15 +133,54 @@ class __TwigTemplate_fbef146dd8c8996f635f376b10b4b3893e830287304f700bc8544689328
             echo " on ";
             echo twig_date_format_filter($this->env, $this->getAttribute($context["episode"], "date", []), $this->getAttribute($this->getAttribute($this->getAttribute(($context["system"] ?? null), "pages", []), "dateformat", []), "short", []));
             echo "  </small></span></div>
+
+                                                    <div class=\"tax-list\">
+
+                                            ";
+            // line 52
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($context["episode"], "header", []), "taxonomy", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["t"]) {
+                // line 53
+                echo "                                                ";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable($context["t"]);
+                foreach ($context['_seq'] as $context["_key"] => $context["v"]) {
+                    // line 54
+                    echo "
+
+                                                    <a  href=\"";
+                    // line 56
+                    echo (($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/utility/tagfind"], "method"), "url", []) . "?") . $context["v"]);
+                    echo "\" class=\"tax-block\">";
+                    echo $context["v"];
+                    echo "</a>
+
+
+                                                ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['v'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 60
+                echo "                                            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 61
+            echo "
+                                        </div>
+
             <p class=\"mb-4\">";
-            // line 49
+            // line 64
             echo $this->getAttribute($this->getAttribute($context["episode"], "header", []), "description", []);
             echo "</p>
 
             <div class=\"player\">
                 <audio id=\"player2\" preload=\"none\" controls style=\"max-width: 100%\">
                     <source src=\"";
-            // line 53
+            // line 68
             echo $this->getAttribute($this->getAttribute($context["episode"], "header", []), "mp3link", []);
             echo "\" type=\"audio/mp3\">
                 </audio>
@@ -156,7 +195,7 @@ class __TwigTemplate_fbef146dd8c8996f635f376b10b4b3893e830287304f700bc8544689328
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['episode'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 77
         echo "
         </div>
     </div>
@@ -179,7 +218,7 @@ class __TwigTemplate_fbef146dd8c8996f635f376b10b4b3893e830287304f700bc8544689328
 
     public function getDebugInfo()
     {
-        return array (  160 => 62,  145 => 53,  138 => 49,  132 => 48,  126 => 47,  120 => 43,  114 => 41,  108 => 39,  106 => 38,  100 => 34,  96 => 33,  78 => 18,  72 => 17,  68 => 16,  58 => 9,  51 => 4,  45 => 3,  29 => 1,);
+        return array (  199 => 77,  184 => 68,  177 => 64,  172 => 61,  166 => 60,  154 => 56,  150 => 54,  145 => 53,  141 => 52,  132 => 48,  126 => 47,  120 => 43,  114 => 41,  108 => 39,  106 => 38,  100 => 34,  96 => 33,  78 => 18,  72 => 17,  68 => 16,  58 => 9,  51 => 4,  45 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -238,8 +277,23 @@ class __TwigTemplate_fbef146dd8c8996f635f376b10b4b3893e830287304f700bc8544689328
         );\"></div>
         <div class=\"text\">
 
-            <h3 class=\"font-weight-light\"><a href=\"{{ episode.url }}\">{{ episode.title }}</a></h3>
+            <h3 class=\"font-weight-light\"><a class=\"title-clr\" href=\"{{ episode.url }}\">{{ episode.title }}</a></h3>
             <div class=\"text-white mb-3\"><span class=\"text-black-opacity-05\"><small>Posted in {{ episode.parent.title }} on {{ episode.date|date(system.pages.dateformat.short) }}  </small></span></div>
+
+                                                    <div class=\"tax-list\">
+
+                                            {% for t in episode.header.taxonomy %}
+                                                {% for v in t  %}
+
+
+                                                    <a  href=\"{{ page.find('/utility/tagfind').url ~ \"?\" ~ v }}\" class=\"tax-block\">{{ v }}</a>
+
+
+                                                {% endfor %}
+                                            {% endfor %}
+
+                                        </div>
+
             <p class=\"mb-4\">{{ episode.header.description }}</p>
 
             <div class=\"player\">

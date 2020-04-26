@@ -14,7 +14,7 @@
 
                         {% for tax,value in taxlistFoot %}
                             {% for v in value|keys|slice(0, 12) %}
-                                <a class="tax-block-link" href="{{ page.find('/utility/tagfind').url ~ "?" ~ v }}" v-on:click=" getTax('{{ v }}')">{{ v }}</a>
+                                <a class="tax-block-link" href="{{ page.find('/utility/tagfind').url ~ "?" ~ v }}">{{ v }}</a>
                                  &nbsp;
                             {% endfor %}
                         {% endfor %}
@@ -70,25 +70,6 @@
     <script>
 
 
-        var footer =  new Vue({
-            el: '#footerTax',
-
-            data () {
-                return {
-
-                }
-            },
-            delimiters: ['<%','%>'],
-
-            methods: {
-
-                getTax: function (tag){
-
-                }
-
-            }
-
-        })
 
     </script>
 </footer>

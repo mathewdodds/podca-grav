@@ -58,9 +58,7 @@ class __TwigTemplate_fff849b1894947bf9f548f5b2db617725319444f98cab7521777fc25bb5
                 // line 17
                 echo "                                <a class=\"tax-block-link\" href=\"";
                 echo (($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/utility/tagfind"], "method"), "url", []) . "?") . $context["v"]);
-                echo "\" v-on:click=\" getTax('";
-                echo $context["v"];
-                echo "')\">";
+                echo "\">";
                 echo $context["v"];
                 echo "</a>
                                  &nbsp;
@@ -160,25 +158,6 @@ class __TwigTemplate_fff849b1894947bf9f548f5b2db617725319444f98cab7521777fc25bb5
     <script>
 
 
-        var footer =  new Vue({
-            el: '#footerTax',
-
-            data () {
-                return {
-
-                }
-            },
-            delimiters: ['<%','%>'],
-
-            methods: {
-
-                getTax: function (tag){
-
-                }
-
-            }
-
-        })
 
     </script>
 </footer>";
@@ -199,7 +178,7 @@ class __TwigTemplate_fff849b1894947bf9f548f5b2db617725319444f98cab7521777fc25bb5
 
     public function getDebugInfo()
     {
-        return array (  139 => 50,  135 => 49,  124 => 40,  117 => 39,  110 => 38,  104 => 37,  98 => 33,  95 => 32,  92 => 31,  90 => 30,  79 => 21,  73 => 20,  59 => 17,  54 => 16,  50 => 15,  35 => 2,  33 => 1,);
+        return array (  137 => 50,  133 => 49,  122 => 40,  115 => 39,  108 => 38,  102 => 37,  96 => 33,  93 => 32,  90 => 31,  88 => 30,  77 => 21,  71 => 20,  59 => 17,  54 => 16,  50 => 15,  35 => 2,  33 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -228,7 +207,7 @@ class __TwigTemplate_fff849b1894947bf9f548f5b2db617725319444f98cab7521777fc25bb5
 
                         {% for tax,value in taxlistFoot %}
                             {% for v in value|keys|slice(0, 12) %}
-                                <a class=\"tax-block-link\" href=\"{{ page.find('/utility/tagfind').url ~ \"?\" ~ v }}\" v-on:click=\" getTax('{{ v }}')\">{{ v }}</a>
+                                <a class=\"tax-block-link\" href=\"{{ page.find('/utility/tagfind').url ~ \"?\" ~ v }}\">{{ v }}</a>
                                  &nbsp;
                             {% endfor %}
                         {% endfor %}
@@ -284,25 +263,6 @@ class __TwigTemplate_fff849b1894947bf9f548f5b2db617725319444f98cab7521777fc25bb5
     <script>
 
 
-        var footer =  new Vue({
-            el: '#footerTax',
-
-            data () {
-                return {
-
-                }
-            },
-            delimiters: ['<%','%>'],
-
-            methods: {
-
-                getTax: function (tag){
-
-                }
-
-            }
-
-        })
 
     </script>
 </footer>", "partials/footer.html.twig", "F:\\laragon\\www\\podca\\user\\themes\\podca-grav\\templates\\partials\\footer.html.twig");
