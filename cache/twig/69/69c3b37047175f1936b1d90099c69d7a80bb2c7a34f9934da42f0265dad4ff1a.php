@@ -336,26 +336,6 @@ class __TwigTemplate_880b6da63e2713fb5b977a83cb0e57ed029997a4af427178ade25ea8467
         echo "
 
 
-    <div class=\"site-blocks-cover overlay inner-page-cover\" style=\"background-image: url();\" data-aos=\"fade\" data-stellar-background-ratio=\"0.5\">
-        <div class=\"container\">
-            <div class=\"row align-items-center justify-content-center text-center\">
-
-                <div class=\"col-md-6\" data-aos=\"fade-up\" data-aos-delay=\"400\">
-                    <h2>Subscribe</h2>
-                    <p class=\"mb-5\">Lorem ipsum dolor sit amet, consectetur adipisicing elit nihil saepe libero sit odio obcaecati veniam.</p>
-                    <form action=\"#\" method=\"post\" class=\"site-block-subscribe\">
-                        <div class=\"input-group mb-3\">
-                            <input type=\"text\" class=\"form-control border-secondary text-white bg-transparent\" placeholder=\"Enter Email\" aria-label=\"Enter Email\" aria-describedby=\"button-addon2\">
-                            <div class=\"input-group-append\">
-                                <button class=\"btn primary-ele\" type=\"button\" id=\"button-addon2\">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
 ";
@@ -413,7 +393,7 @@ class __TwigTemplate_880b6da63e2713fb5b977a83cb0e57ed029997a4af427178ade25ea8467
 
     public function getDebugInfo()
     {
-        return array (  395 => 134,  385 => 130,  382 => 129,  378 => 128,  374 => 126,  368 => 125,  336 => 138,  334 => 125,  329 => 122,  321 => 119,  310 => 111,  303 => 107,  298 => 104,  292 => 103,  280 => 99,  276 => 97,  271 => 96,  267 => 95,  258 => 91,  252 => 90,  246 => 86,  240 => 84,  234 => 82,  232 => 81,  226 => 77,  223 => 76,  221 => 75,  219 => 74,  216 => 73,  211 => 72,  205 => 71,  202 => 70,  199 => 69,  196 => 68,  193 => 67,  190 => 66,  185 => 65,  183 => 64,  173 => 56,  165 => 53,  162 => 52,  160 => 51,  148 => 42,  140 => 37,  134 => 36,  130 => 35,  120 => 27,  114 => 25,  108 => 23,  106 => 22,  100 => 18,  97 => 17,  92 => 16,  86 => 15,  83 => 14,  80 => 13,  77 => 12,  74 => 11,  71 => 10,  66 => 9,  64 => 8,  60 => 7,  57 => 6,  55 => 5,  52 => 4,  46 => 3,  30 => 1,);
+        return array (  375 => 134,  365 => 130,  362 => 129,  358 => 128,  354 => 126,  348 => 125,  336 => 138,  334 => 125,  329 => 122,  321 => 119,  310 => 111,  303 => 107,  298 => 104,  292 => 103,  280 => 99,  276 => 97,  271 => 96,  267 => 95,  258 => 91,  252 => 90,  246 => 86,  240 => 84,  234 => 82,  232 => 81,  226 => 77,  223 => 76,  221 => 75,  219 => 74,  216 => 73,  211 => 72,  205 => 71,  202 => 70,  199 => 69,  196 => 68,  193 => 67,  190 => 66,  185 => 65,  183 => 64,  173 => 56,  165 => 53,  162 => 52,  160 => 51,  148 => 42,  140 => 37,  134 => 36,  130 => 35,  120 => 27,  114 => 25,  108 => 23,  106 => 22,  100 => 18,  97 => 17,  92 => 16,  86 => 15,  83 => 14,  80 => 13,  77 => 12,  74 => 11,  71 => 10,  66 => 9,  64 => 8,  60 => 7,  57 => 6,  55 => 5,  52 => 4,  46 => 3,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -565,26 +545,6 @@ class __TwigTemplate_880b6da63e2713fb5b977a83cb0e57ed029997a4af427178ade25ea8467
     {% endblock %}
 
 
-
-    <div class=\"site-blocks-cover overlay inner-page-cover\" style=\"background-image: url();\" data-aos=\"fade\" data-stellar-background-ratio=\"0.5\">
-        <div class=\"container\">
-            <div class=\"row align-items-center justify-content-center text-center\">
-
-                <div class=\"col-md-6\" data-aos=\"fade-up\" data-aos-delay=\"400\">
-                    <h2>Subscribe</h2>
-                    <p class=\"mb-5\">Lorem ipsum dolor sit amet, consectetur adipisicing elit nihil saepe libero sit odio obcaecati veniam.</p>
-                    <form action=\"#\" method=\"post\" class=\"site-block-subscribe\">
-                        <div class=\"input-group mb-3\">
-                            <input type=\"text\" class=\"form-control border-secondary text-white bg-transparent\" placeholder=\"Enter Email\" aria-label=\"Enter Email\" aria-describedby=\"button-addon2\">
-                            <div class=\"input-group-append\">
-                                <button class=\"btn primary-ele\" type=\"button\" id=\"button-addon2\">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

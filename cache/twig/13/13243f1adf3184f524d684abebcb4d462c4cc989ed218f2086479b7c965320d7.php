@@ -57,7 +57,7 @@ class __TwigTemplate_825af8513fd1f09d6dea86cde47752584f95bb95e90b4e1c911eabd9d18
             <div class=\"row\">
                 <div class=\"col-md-10\">
 
-                    <h3 class=\"title-clr\">";
+                    <h3 class=\"title-block\">";
         // line 13
         echo $this->getAttribute(($context["page"] ?? null), "title", []);
         echo "</h3>
@@ -118,7 +118,7 @@ class __TwigTemplate_825af8513fd1f09d6dea86cde47752584f95bb95e90b4e1c911eabd9d18
             <div class=\"row\">
                 <div class=\"col-md-10\">
 
-                    <h3 class=\"title-clr\">{{ page.title }}</h3>
+                    <h3 class=\"title-block\">{{ page.title }}</h3>
 <br>
                     {{ page.content }}
 

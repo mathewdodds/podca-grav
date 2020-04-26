@@ -55,12 +55,12 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 ";
         // line 21
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 68
+        // line 71
         echo "
     ";
-        // line 69
+        // line 72
         $this->displayBlock('assets', $context, $blocks);
-        // line 73
+        // line 76
         echo "
 </head>
 
@@ -72,30 +72,30 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
 
 ";
-        // line 83
+        // line 86
         $this->displayBlock('header', $context, $blocks);
-        // line 140
+        // line 143
         echo "
 
 ";
-        // line 142
+        // line 145
         $this->displayBlock('body', $context, $blocks);
-        // line 148
+        // line 151
         echo "
 
 ";
-        // line 150
+        // line 153
         $this->displayBlock('footer', $context, $blocks);
-        // line 156
+        // line 159
         echo "
 </div>
 
 
 
 ";
-        // line 161
+        // line 164
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 203
+        // line 206
         echo "
 
 </body>
@@ -237,14 +237,20 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
         echo ";
             opacity:0.64;
         }
+        .title-block{
+            color: ";
+        // line 62
+        echo ($context["clr_title"] ?? null);
+        echo ";
+        }
 
 
     </style>
 
     ";
-        // line 65
+        // line 68
         $this->getAttribute(($context["assets"] ?? null), "addCss", [0 => "theme://css/style.css"], "method");
-        // line 66
+        // line 69
         echo "
 ";
         
@@ -257,13 +263,13 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
         $this->env->getExtension('Phive\Twig\Extensions\Deferred\DeferredExtension')->defer($this, 'assets');
     }
 
-    // line 69
+    // line 72
     public function block_assets_deferred($context, array $blocks = array())
     {
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4 = $this->env->getExtension("Twig\\Extension\\ProfilerExtension");
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4->enter($__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "assets"));
 
-        // line 70
+        // line 73
         echo "    ";
         echo $this->getAttribute(($context["assets"] ?? null), "css", [], "method");
         echo "
@@ -275,13 +281,13 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
         $this->env->getExtension('Phive\Twig\Extensions\Deferred\DeferredExtension')->resolve($this, $context, $blocks);
     }
 
-    // line 83
+    // line 86
     public function block_header($context, array $blocks = [])
     {
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4 = $this->env->getExtension("Twig\\Extension\\ProfilerExtension");
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4->enter($__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 84
+        // line 87
         echo "
     <div class=\"site-mobile-menu\">
         <div class=\"site-mobile-menu-header\">
@@ -301,7 +307,7 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
                 <div class=\"col-3\" data-aos=\"fade-down\">
                     <h1><a href=\"";
-        // line 102
+        // line 105
         echo $this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/home"], "method"), "url", []);
         echo "\" class=\"text-white h2\"><i class=\"fa fa-podcast\"></i> Podcast</a></h1>
                 </div>
@@ -314,11 +320,11 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
                         <ul class=\"site-menu js-clone-nav d-none\">
                             ";
-        // line 112
+        // line 115
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/home"], "method"), "children", []), "visible", []));
         foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
-            // line 113
+            // line 116
             echo "                            <li><a href=\"";
             echo $this->getAttribute($context["child"], "url", []);
             echo "\">";
@@ -329,17 +335,17 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 115
+        // line 118
         echo "
                             <li class=\"has-children\">
                                 <a class=\"dropme\" href=\"#\">Series</a>
                                 <ul class=\"dropdown arrow-top\">
                                     ";
-        // line 119
+        // line 122
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/podcast"], "method"), "children", []));
         foreach ($context['_seq'] as $context["_key"] => $context["series"]) {
-            // line 120
+            // line 123
             echo "                                        <li><a href=\"";
             echo $this->getAttribute($context["series"], "url", []);
             echo "\">";
@@ -350,15 +356,15 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['series'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 122
+        // line 125
         echo "                                </ul>
                             </li>
                             ";
-        // line 124
+        // line 127
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["page"] ?? null), "find", [0 => "/info"], "method"), "children", []), "visible", []));
         foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
-            // line 125
+            // line 128
             echo "                                <li><a href=\"";
             echo $this->getAttribute($context["child"], "url", []);
             echo "\">";
@@ -369,7 +375,7 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 127
+        // line 130
         echo "                        </ul>
                     </nav>
 
@@ -388,18 +394,18 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
     }
 
-    // line 142
+    // line 145
     public function block_body($context, array $blocks = [])
     {
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4 = $this->env->getExtension("Twig\\Extension\\ProfilerExtension");
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4->enter($__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 143
+        // line 146
         echo "
         ";
-        // line 144
+        // line 147
         $this->displayBlock('content', $context, $blocks);
-        // line 145
+        // line 148
         echo "
 
 ";
@@ -408,7 +414,7 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
     }
 
-    // line 144
+    // line 147
     public function block_content($context, array $blocks = [])
     {
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4 = $this->env->getExtension("Twig\\Extension\\ProfilerExtension");
@@ -419,18 +425,18 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
     }
 
-    // line 150
+    // line 153
     public function block_footer($context, array $blocks = [])
     {
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4 = $this->env->getExtension("Twig\\Extension\\ProfilerExtension");
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4->enter($__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 151
+        // line 154
         echo "
     ";
-        // line 152
-        $this->loadTemplate("partials/footer.html.twig", "partials/base.html.twig", 152)->display($context);
-        // line 153
+        // line 155
+        $this->loadTemplate("partials/footer.html.twig", "partials/base.html.twig", 155)->display($context);
+        // line 156
         echo "
 
 ";
@@ -439,52 +445,52 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
     }
 
-    // line 161
+    // line 164
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4 = $this->env->getExtension("Twig\\Extension\\ProfilerExtension");
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4->enter($__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 162
-        echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery-3.3.1.min.js"], "method");
-        // line 163
-        echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery-migrate-3.0.1.min.js"], "method");
-        // line 164
-        echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery-ui.js"], "method");
         // line 165
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/popper.min.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery-3.3.1.min.js"], "method");
         // line 166
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/bootstrap.min.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery-migrate-3.0.1.min.js"], "method");
         // line 167
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/owl.carousel.min.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery-ui.js"], "method");
         // line 168
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery.stellar.min.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/popper.min.js"], "method");
         // line 169
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery.countdown.min.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/bootstrap.min.js"], "method");
         // line 170
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery.magnific-popup.min.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/owl.carousel.min.js"], "method");
         // line 171
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/aos.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery.stellar.min.js"], "method");
         // line 172
         echo "    ";
-        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/slick.min.js"], "method");
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery.countdown.min.js"], "method");
         // line 173
+        echo "    ";
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery.magnific-popup.min.js"], "method");
+        // line 174
+        echo "    ";
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/aos.js"], "method");
+        // line 175
+        echo "    ";
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/slick.min.js"], "method");
+        // line 176
         echo "
 
     ";
-        // line 175
+        // line 178
         $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/mediaelement-and-player.min.js"], "method");
-        // line 176
+        // line 179
         echo "
 
 
@@ -508,12 +514,12 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
     </script>
 
     ";
-        // line 198
+        // line 201
         $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/main.js"], "method");
-        // line 199
+        // line 202
         echo "
     ";
-        // line 200
+        // line 203
         echo $this->getAttribute(($context["assets"] ?? null), "js", [], "method");
         echo "
 
@@ -535,7 +541,7 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
 
     public function getDebugInfo()
     {
-        return array (  517 => 200,  514 => 199,  512 => 198,  488 => 176,  486 => 175,  482 => 173,  479 => 172,  476 => 171,  473 => 170,  470 => 169,  467 => 168,  464 => 167,  461 => 166,  458 => 165,  455 => 164,  452 => 163,  449 => 162,  443 => 161,  434 => 153,  432 => 152,  429 => 151,  423 => 150,  412 => 144,  403 => 145,  401 => 144,  398 => 143,  392 => 142,  373 => 127,  362 => 125,  358 => 124,  354 => 122,  343 => 120,  339 => 119,  333 => 115,  322 => 113,  318 => 112,  305 => 102,  285 => 84,  279 => 83,  267 => 70,  261 => 69,  248 => 66,  246 => 65,  236 => 58,  230 => 55,  224 => 52,  217 => 48,  213 => 47,  207 => 44,  203 => 43,  198 => 40,  195 => 39,  192 => 38,  189 => 37,  187 => 36,  180 => 31,  177 => 30,  174 => 29,  171 => 28,  168 => 27,  165 => 26,  163 => 25,  158 => 22,  152 => 21,  140 => 14,  136 => 13,  133 => 12,  131 => 11,  120 => 7,  117 => 6,  111 => 5,  99 => 203,  97 => 161,  90 => 156,  88 => 150,  84 => 148,  82 => 142,  78 => 140,  76 => 83,  64 => 73,  62 => 69,  59 => 68,  57 => 21,  53 => 19,  51 => 5,  46 => 3,  43 => 2,  41 => 1,);
+        return array (  523 => 203,  520 => 202,  518 => 201,  494 => 179,  492 => 178,  488 => 176,  485 => 175,  482 => 174,  479 => 173,  476 => 172,  473 => 171,  470 => 170,  467 => 169,  464 => 168,  461 => 167,  458 => 166,  455 => 165,  449 => 164,  440 => 156,  438 => 155,  435 => 154,  429 => 153,  418 => 147,  409 => 148,  407 => 147,  404 => 146,  398 => 145,  379 => 130,  368 => 128,  364 => 127,  360 => 125,  349 => 123,  345 => 122,  339 => 118,  328 => 116,  324 => 115,  311 => 105,  291 => 87,  285 => 86,  273 => 73,  267 => 72,  254 => 69,  252 => 68,  243 => 62,  236 => 58,  230 => 55,  224 => 52,  217 => 48,  213 => 47,  207 => 44,  203 => 43,  198 => 40,  195 => 39,  192 => 38,  189 => 37,  187 => 36,  180 => 31,  177 => 30,  174 => 29,  171 => 28,  168 => 27,  165 => 26,  163 => 25,  158 => 22,  152 => 21,  140 => 14,  136 => 13,  133 => 12,  131 => 11,  120 => 7,  117 => 6,  111 => 5,  99 => 206,  97 => 164,  90 => 159,  88 => 153,  84 => 151,  82 => 145,  78 => 143,  76 => 86,  64 => 76,  62 => 72,  59 => 71,  57 => 21,  53 => 19,  51 => 5,  46 => 3,  43 => 2,  41 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -607,6 +613,9 @@ class __TwigTemplate_fbffc63d5f4d04af4cac5d51cb6586579f2d0a92ff5b405c572a581d5bb
         .title-clr:hover{
             color:{{ clr_title }};
             opacity:0.64;
+        }
+        .title-block{
+            color: {{ clr_title }};
         }
 
 

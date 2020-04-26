@@ -15,12 +15,22 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/01.home/03._rss" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\laragon\www\podca\user\pages\01.home\03._rssblock" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\laragon\www\podca\user\pages\01.home\03._rss" />
+      <recent name="F:\laragon\www\podca\user\pages\01.home" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,7 +58,7 @@
       <workItem from="1586748860811" duration="1294000" />
       <workItem from="1587440194006" duration="698000" />
       <workItem from="1587699568955" duration="6088000" />
-      <workItem from="1587932301695" duration="599000" />
+      <workItem from="1587932301695" duration="2317000" />
     </task>
     <servers />
   </component>

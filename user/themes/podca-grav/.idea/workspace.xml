@@ -24,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/modular" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -34,17 +34,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Twig" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates\modular" />
+      <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates" />
+      <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates\partials" />
+      <recent name="F:\laragon\www\podca\user\themes\podca-grav\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates\modular" />
       <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates" />
       <recent name="F:\laragon\www\podca\user\themes\podca-grav" />
       <recent name="F:\laragon\www\podca\user\themes\podca-grav\css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates" />
-      <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates\modular" />
-      <recent name="F:\laragon\www\podca\user\themes\podca-grav\templates\partials" />
-      <recent name="F:\laragon\www\podca\user\themes\podca-grav\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -81,7 +81,7 @@
       <workItem from="1587433579017" duration="9040000" />
       <workItem from="1587699238922" duration="9049000" />
       <workItem from="1587760551476" duration="14012000" />
-      <workItem from="1587932301840" duration="804000" />
+      <workItem from="1587932301840" duration="2718000" />
     </task>
     <servers />
   </component>
