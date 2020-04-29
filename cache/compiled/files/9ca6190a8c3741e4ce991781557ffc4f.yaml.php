@@ -2,9 +2,9 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'F:/laragon/www/podca/user/data/notifications/eb0a191797624dd3a48fa681d3061212.yaml',
-    'modified' => 1588099490,
+    'modified' => 1588124802,
     'data' => [
-        'last_checked' => 1588099490,
+        'last_checked' => 1588124802,
         'data' => [
             'feed' => [
                 0 => [

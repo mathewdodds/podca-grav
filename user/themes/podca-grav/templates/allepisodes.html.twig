@@ -1,0 +1,90 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {% set podcasts = page.find('/podcast') %}
+
+    <div class="site-block-top bg-dark">
+    </div>
+
+<div class="site-section bg-light">
+    <div class="container">
+
+        <div class="row mb-5" data-aos="fade-up">
+            <div class="col-md-12 text-center">
+                <h2 class="font-weight-bold text-black">All Episodes</h2>
+            </div>
+        </div>
+
+
+        {% set collection = null %}
+        {% for series in podcasts.children %}
+            {% if collection is null %}
+                {% set collection = series.children %}
+            {% else %}
+                {% set collection = collection.merge(series.children) %}
+            {% endif %}
+        {% endfor %}
+
+        {% set limit = 5 %}
+        {% do paginate( collection, limit ) %}
+
+
+        {% for episode in collection %}
+
+
+
+
+            <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+                <div class="image" style="background-image: url(
+
+                            {% if episode.media['img_small.jpg'].exists() == false %}
+                                            '{{ episode.parent.media['img_small.jpg'].url }}'
+                             {% else %}
+                                            '{{ episode.media['img_small.jpg'].url }}'
+                            {% endif %}
+
+                );"></div>
+                <div class="text">
+
+                    <h3 class="font-weight-light"><a class="title-clr" href="{{ episode.url }}">{{ episode.title }}</a></h3>
+                    <div class="text-white mb-3"><span class="text-black-opacity-05"><small>Posted in {{ episode.parent.title }} on {{ episode.date|date(system.pages.dateformat.short) }}  </small></span></div>
+
+                                                            <div class="tax-list">
+
+                                                    {% for t in episode.header.taxonomy %}
+                                                        {% for v in t  %}
+
+
+                                                            <a  href="{{ page.find('/utility/tagfind').url ~ "?" ~ v }}" class="tax-block">{{ v }}</a>
+
+
+                                                        {% endfor %}
+                                                    {% endfor %}
+
+                                                </div>
+
+                    <p class="mb-4">{{ episode.header.summary(200) }}</p>
+
+                    <div class="player">
+                        <audio id="player2" preload="none" controls style="max-width: 100%">
+                            <source src="{{ episode.header.mp3link }}" type="audio/mp3">
+                        </audio>
+                    </div>
+
+                </div>
+            </div>
+
+
+        {% endfor %}
+
+        {% if config.plugins.pagination.enabled and collection.params.pagination %}
+            {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+

@@ -33,37 +33,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
-    {% set clr_p_bg = theme_var('primary_bg') %}
-    {% set clr_p_txt = theme_var('primary_txt') %}
-    {% set clr_s_bg = theme_var('secondary_bg') %}
-    {% set clr_title = theme_var('title_colour') %}
 
-    <style>
-        .primary-ele{
-            color:{{ clr_p_txt }};
-            background-color:{{ clr_p_bg }};
-        }
-        .primary-ele:hover{
-            color:{{ clr_p_txt }};
-            background-color:{{ clr_p_bg }};
-            opacity:0.95;
-        }
-        .team-member::before{
-            background: {{ clr_s_bg }};
-        }
-        .title-clr{
-            color: {{ clr_title }};
-        }
-        .title-clr:hover{
-            color:{{ clr_title }};
-            opacity:0.64;
-        }
-        .title-block{
-            color: {{ clr_title }};
-        }
-
-
-    </style>
 
     {% do assets.addCss('theme://css/style.css') %}
 
@@ -203,6 +173,43 @@
     {{ assets.js()|raw }}
 
 {% endblock %}
+
+{% set clr_p_bg = theme_var('primary_bg') %}
+{% set clr_p_txt = theme_var('primary_txt') %}
+{% set clr_s_bg = theme_var('secondary_bg') %}
+{% set clr_title = theme_var('title_colour') %}
+
+
+<style>
+
+    .primary-ele{
+        color:{{ clr_p_txt }};
+        background-color:{{ clr_p_bg }};
+    }
+    .primary-ele:hover{
+        color:{{ clr_p_txt }};
+        background-color:{{ clr_p_bg }};
+        opacity:0.95;
+    }
+    .team-member::before{
+        background: {{ clr_s_bg }};
+    }
+    .title-clr{
+        color: {{ clr_title }};
+    }
+    .title-clr:hover{
+        color:{{ clr_title }};
+        opacity:0.64;
+    }
+    .title-block{
+        color: {{ clr_title }};
+    }
+
+    a {
+    color: {{ clr_title }};
+    }
+
+</style>
 
 
 </body>
