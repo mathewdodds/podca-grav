@@ -32,6 +32,7 @@ user/config/plugins/email.yaml
 #specific .htaccess -> dists in webserver-congifs
 .htaccess
 
+logs/popularity/*
 cache/*
 
 tests/_output/*
