@@ -2,6 +2,8 @@
 .sass-cache
 *.map
 
+
+
 # Add the entire Grav site to GitHub
 # https://getgrav.org/blog/developing-with-github-part-2
 composer.lock
@@ -29,6 +31,8 @@ user/config/plugins/email.yaml
 
 #specific .htaccess -> dists in webserver-congifs
 .htaccess
+
+cache/*
 
 tests/_output/*
 tests/_support/_generated/*
