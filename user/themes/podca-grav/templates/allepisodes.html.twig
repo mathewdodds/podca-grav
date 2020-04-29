@@ -29,7 +29,7 @@
         {% do paginate( collection, limit ) %}
 
 
-        {% for episode in collection %}
+        {% for episode in collection.order('date','desc') %}
 
 
 
