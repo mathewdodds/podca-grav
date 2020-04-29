@@ -30,7 +30,7 @@ class __TwigTemplate_a970e9a72702cf6dadbb5ce0e179fe17dfb98f25b7680a099de05492a7c
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4->enter($__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "partials/login-form.html.twig"));
 
         // line 1
-        $this->loadTemplate("partials/login-form.html.twig", "partials/login-form.html.twig", 1, "540800607")->display(twig_array_merge($context, ["title" => "Grav Admin Login"]));
+        $this->loadTemplate("partials/login-form.html.twig", "partials/login-form.html.twig", 1, "304712846")->display(twig_array_merge($context, ["title" => "Grav Admin Login"]));
         
         $__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4->leave($__internal_57054b9517dd8b3da0f938a595b841d745c7d753e57333ce87e0f394208342f4_prof);
 
@@ -98,7 +98,7 @@ class __TwigTemplate_a970e9a72702cf6dadbb5ce0e179fe17dfb98f25b7680a099de05492a7c
 
 
 /* partials/login-form.html.twig */
-class __TwigTemplate_a970e9a72702cf6dadbb5ce0e179fe17dfb98f25b7680a099de05492a7cd35c5___540800607 extends \Twig\Template
+class __TwigTemplate_a970e9a72702cf6dadbb5ce0e179fe17dfb98f25b7680a099de05492a7cd35c5___304712846 extends \Twig\Template
 {
     public function __construct(Environment $env)
     {

@@ -84,11 +84,11 @@
                             {{ dump(passArray|string) }}
 
                             <script>
-                                var passTax{{ episode.title|hyphenize }};
-                                passTax{{ episode.title|hyphenize }} = {{ passArray|string }};
+                                var passTax{{ episode.title|md5 }};
+                                passTax{{ episode.title|md5 }} = {{ passArray|string }};
                             </script>
 
-                            <div v-show= "match('{{ episode.title }}{{ episode.header.description }}',passTax{{ episode.title|hyphenize }})">
+                            <div v-show= "match('{{ episode.title }}{{ episode.header.summary(200) }}',passTax{{ episode.title|md5 }})">
                                 <h3 class="font-weight-light"><a class="title-clr" href="{{ episode.url }}">{{ episode.title }}</a></h3>
                                 <div class="text-white"><span class="text-black-opacity-05">
                         <small>
@@ -110,7 +110,7 @@
 
                                 </div>
 
-                                <p class="mb-4">{{ episode.header.description }}</p>
+                                <p class="mb-4">{{ episode.header.summary(200) }}</p>
                                 <hr>
                             </div>
 

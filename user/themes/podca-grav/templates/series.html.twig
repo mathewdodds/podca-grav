@@ -15,7 +15,7 @@
                 <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                     <h2 class="text-white font-weight-light mb-2 display-4">{{page.title}}</h2>
                     <div class="text-white mb-3"><span class="text-white-opacity-05"><small>By {{ page.header.author }} <span class="sep">/</span> {{ page.date|date(system.pages.dateformat.short) }} </small></span></div>
-                    <p class="mb-4">{{ page.header.description }}</p>
+                    <p class="mb-4">{{ page.header.summary(200) }}</p>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
 
                                         </div>
 
-            <p class="mb-4">{{ episode.header.description }}</p>
+            <p class="mb-4">{{ episode.header.summary(200) }}</p>
 
             <div class="player">
                 <audio id="player2" preload="none" controls style="max-width: 100%">

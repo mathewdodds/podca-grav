@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1587845763,
-    'checksum' => '66ede0ab797bf138bbfa0082012c5e37',
+    'timestamp' => 1588040515,
+    'checksum' => '677b86a480293b8fba4a69ac00c427ea',
     'files' => [
         'user/config' => [
             'backups' => [
@@ -43,7 +43,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1586717755
+                'modified' => 1588040080
             ],
             'themes/podca-grav' => [
                 'file' => 'user/config/themes/podca-grav.yaml',
@@ -112,6 +112,10 @@ return [
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
                 'modified' => 1586046083
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/pagination.yaml',
+                'modified' => 1588040078
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
@@ -339,6 +343,11 @@ return [
                     2 => 'blue',
                     3 => 'green'
                 ]
+            ],
+            'pagination' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'delta' => 0
             ],
             'problems' => [
                 'enabled' => true,

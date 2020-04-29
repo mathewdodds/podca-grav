@@ -1,2 +1,0 @@
-1587084243
-C:39:"Grav\Common\Flex\Types\Pages\PageObject":462:{a:4:{s:4:"type";s:5:"pages";s:3:"key";s:11:"home/search";s:8:"elements";a:3:{s:4:"root";b:0;s:6:"header";a:2:{s:5:"title";s:6:"Search";s:12:"body_classes";s:1:" ";}s:8:"markdown";s:0:"";}s:7:"storage";a:6:{s:3:"key";s:11:"home/search";s:11:"storage_key";s:17:"01.home/03.search";s:8:"template";s:6:"search";s:17:"storage_timestamp";i:1586652454;s:8:"markdown";a:1:{s:0:"";a:1:{s:6:"search";i:1586652439;}}s:8:"checksum";s:32:"e8822e25a1e4178a2102376e5ed2e64f";}}}

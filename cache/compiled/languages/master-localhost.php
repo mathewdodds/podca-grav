@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledLanguages',
-    'timestamp' => 1586718465,
-    'checksum' => 'a0442f7dafab41f09b324fe43038a0bd',
+    'timestamp' => 1588040518,
+    'checksum' => '5cd0d02cebf9f8f5b03bfd94d7ffaba7',
     'files' => [
         'system/languages' => [
             'ar' => [
@@ -186,6 +186,10 @@ return [
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/languages.yaml',
                 'modified' => 1586046083
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/languages.yaml',
+                'modified' => 1588040078
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/languages.yaml',
@@ -2751,6 +2755,12 @@ You have **2FA** enabled on this account. Please use your **2FA** app to enter t
                 'LEVEL_CLASSES' => 'Level classes',
                 'LEVEL_CLASSES_HELP' => 'The classes to use for each level of notices depth',
                 'LEVEL_CLASSES_PLACEHOLDER' => 'e.g. yellow, red, blue, green'
+            ],
+            'PLUGIN_PAGINATION' => [
+                'DELTA' => 'Delta',
+                'DELTA_HELP' => 'How many pages to show left and right of the current page',
+                'BUILTIN_CSS' => 'Use built in CSS',
+                'BUILTIN_CSS_HELP' => 'Include the CSS provided by the Pagination plugin'
             ],
             'PLUGIN_PROBLEMS' => [
                 'BUILTIN_CSS' => 'Use built in CSS',
@@ -9783,6 +9793,12 @@ Calea: `%2$s`
                 'LEVEL_CLASSES_HELP' => 'Эти классы используются на каждом уровне глубины уведомлений',
                 'LEVEL_CLASSES_PLACEHOLDER' => 'например yellow, red, blue, green'
             ],
+            'PLUGIN_PAGINATION' => [
+                'DELTA' => 'Дельта',
+                'DELTA_HELP' => 'Сколько страниц показывать слева и справа от текущей страницы',
+                'BUILTIN_CSS' => 'Использовать встроенный CSS',
+                'BUILTIN_CSS_HELP' => 'Использовать CSS, предоставленный плагином Pagination'
+            ],
             'PLUGIN_PROBLEMS' => [
                 'BUILTIN_CSS' => 'Использовать встроенный CSS',
                 'BUILTIN_CSS_HELP' => 'Использовать CSS, предоставленный плагином Problems'
@@ -10685,6 +10701,12 @@ title: %1$s
                 'LEVEL_CLASSES' => 'Класи рівнів',
                 'LEVEL_CLASSES_HELP' => 'Ці класи використовуються на кожному рівні глибини повідомлень',
                 'LEVEL_CLASSES_PLACEHOLDER' => 'наприклад yellow, red, blue, green'
+            ],
+            'PLUGIN_PAGINATION' => [
+                'DELTA' => 'Дельта',
+                'DELTA_HELP' => 'Скільки сторінок відображатиметься ліворуч і праворуч від поточної сторінки',
+                'BUILTIN_CSS' => 'Використовувати вбудований CSS',
+                'BUILTIN_CSS_HELP' => 'Використовувати CSS, наданий плагіном Pagination'
             ],
             'PLUGIN_PROBLEMS' => [
                 'BUILTIN_CSS' => 'Використовувати вбудований CSS',
